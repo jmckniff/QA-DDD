@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5011C60-FF57-4359-9044-78EB2C97E51B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QA.Domain</RootNamespace>
+    <AssemblyName>QA.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainEvents.cs" />
+    <Compile Include="Entities\Answer.cs" />
+    <Compile Include="Entities\BodyContent.cs" />
+    <Compile Include="Entities\Poster.cs" />
+    <Compile Include="Entities\Reputation.cs" />
+    <Compile Include="Entities\Tag.cs" />
+    <Compile Include="Enums\BodyContentType.cs" />
+    <Compile Include="Entities\Question.cs" />
+    <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\Contributor.cs" />
+    <Compile Include="Entities\DownVote.cs" />
+    <Compile Include="Entities\PlainTextContent.cs" />
+    <Compile Include="Events\AnswerAdded.cs" />
+    <Compile Include="Events\AnswerUnaccepted.cs" />
+    <Compile Include="Events\AnswerAccepted.cs" />
+    <Compile Include="Events\QuestionCommentAdded.cs" />
+    <Compile Include="Events\AnswerCommentAdded.cs" />
+    <Compile Include="Exceptions\InvalidContributorException.cs" />
+    <Compile Include="Interfaces\IEvent.cs" />
+    <Compile Include="Events\QuestionDownVoted.cs" />
+    <Compile Include="Events\QuestionUpVoted.cs" />
+    <Compile Include="Exceptions\InvalidAnswerException.cs" />
+    <Compile Include="Exceptions\InsufficientReputationException.cs" />
+    <Compile Include="Interfaces\IHappened.cs" />
+    <Compile Include="Interfaces\IVoteable.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Entities\Member.cs" />
+    <Compile Include="Entities\UpVote.cs" />
+    <Compile Include="Enums\VoteType.cs" />
+    <Compile Include="ValueObjects\Name.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\Vote.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
